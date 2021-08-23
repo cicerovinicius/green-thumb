@@ -12,7 +12,6 @@
 	<script src="assets/dist/js/scripts.min.js"></script>
 </head>
 <body>
-	<!-- <img src="assets/dist/images/icons/logo-white.svg" alt="Greenthumb" /> -->
 	<main id="main-wrapper">
 		<section id="hero">
 			<div class="content">
@@ -21,11 +20,9 @@
 						<img src="assets/dist/images/green-thumb-logo.png" alt="white logo green thumb" title="green thumb" />
 					</a>
 					<h1 class="title" title="Greenthumb can help you to find the perfect plant for you">Find your <br/>next green <br/>friend</h1>
-					<a href="#" class="arrow-btn" title="Click to see ours products"></a>
+					<button class="arrow-btn anchor" data-scroll-to="#selects" title="Click to see ours products"></button>
 				</div>
-				<div class="img-area">
-					<img src="assets/dist/images/hero/desktop/plantperson.png" alt="drawing of a person holding a plant and other plants in the background" title="green thumb" />
-				</div>
+				<div class="img-area"></div>
 			</div>
 		</section>
 		
@@ -37,20 +34,20 @@
 					<div class="select-box-area">
 						<div class="select-box" id="select-box-sunlight" tabindex="1">
 							<div class="select-option">
-								<input class="select-radio" type="radio" id="select-sun" value="no" name="sun" checked="checked"/>
+								<input class="select-radio" type="radio" id="select-sun" value="unselected" name="sun" checked="checked"/>
 								<p class="select-text">Select...</p>
 							</div>
 							<div class="select-option">
 								<input class="select-radio" type="radio" id="no-sun" value="no" name="sun"/>
-								<p class="select-text">No</p>
+								<p class="select-text">No sunlight</p>
 							</div>
 							<div class="select-option">
 								<input class="select-radio" type="radio" id="low-sun" value="low" name="sun"/>
-								<p class="select-text">Low</p>
+								<p class="select-text">Low sunlight</p>
 							</div>
 							<div class="select-option">
 								<input class="select-radio" type="radio" id="high-sun" value="high" name="sun"/>
-								<p class="select-text">High</p>
+								<p class="select-text">High sunlight</p>
 							</div>
 						</div>
 						<ul class="select-label-list">
@@ -58,13 +55,13 @@
 								<label class="select-label" for="select-sun" aria-hidden="aria-hidden">Select...</label>
 							</li>
 							<li>
-								<label class="select-label" for="no-sun" aria-hidden="aria-hidden">No</label>
+								<label class="select-label" for="no-sun" aria-hidden="aria-hidden">No sunlight</label>
 							</li>
 							<li>
-								<label class="select-label" for="low-sun" aria-hidden="aria-hidden">Low</label>
+								<label class="select-label" for="low-sun" aria-hidden="aria-hidden">Low sunlight</label>
 							</li>
 							<li>
-								<label class="select-label" for="high-sun" aria-hidden="aria-hidden">High</label>
+								<label class="select-label" for="high-sun" aria-hidden="aria-hidden">High sunlight</label>
 							</li>
 						</ul>
 					</div>
@@ -76,8 +73,12 @@
 					<div class="select-box-area">
 						<div class="select-box" tabindex="2">
 							<div class="select-option">
-								<input class="select-radio" type="radio" id="select-water" value="regularly" name="water" checked="checked"/>
+								<input class="select-radio" type="radio" id="select-water" value="unselected" name="water" checked="checked"/>
 								<p class="select-text">Select...</p>
+							</div>
+							<div class="select-option">
+								<input class="select-radio" type="radio" id="water-rarely" value="rarely" name="water"/>
+								<p class="select-text">Rarely</p>
 							</div>
 							<div class="select-option">
 								<input class="select-radio" type="radio" id="water-regularly" value="regularly" name="water"/>
@@ -87,23 +88,19 @@
 								<input class="select-radio" type="radio" id="water-daily" value="daily" name="water"/>
 								<p class="select-text">Daily</p>
 							</div>
-							<div class="select-option">
-								<input class="select-radio" type="radio" id="water-rarely" value="rarely" name="water"/>
-								<p class="select-text">Rarely</p>
-							</div>
 						</div>
 						<ul class="select-label-list">
 							<li>
 								<label class="select-label" for="select-water" aria-hidden="aria-hidden">Select...</label>
 							</li>
 							<li>
+								<label class="select-label" for="water-rarely" aria-hidden="aria-hidden">Rarely</label>
+							</li>
+							<li>
 								<label class="select-label" for="water-regularly" aria-hidden="aria-hidden">Regularly</label>
 							</li>
 							<li>
 								<label class="select-label" for="water-daily" aria-hidden="aria-hidden">Daily</label>
-							</li>
-							<li>
-								<label class="select-label" for="water-rarely" aria-hidden="aria-hidden">Rarely</label>
 							</li>
 						</ul>
 					</div>
@@ -115,16 +112,16 @@
 					<div class="select-box-area">
 						<div class="select-box" tabindex="1">
 							<div class="select-option">
-								<input class="select-radio" type="radio" id="select-pets" value="false" name="pets" checked="checked"/>
+								<input class="select-radio" type="radio" id="select-pets" value="unselected" name="pets" checked="checked"/>
 								<p class="select-text">Select...</p>
 							</div>
 							<div class="select-option">
-								<input class="select-radio" type="radio" id="yes-pets" value="true" name="pets"/>
-								<p class="select-text">True</p>
+								<input class="select-radio" type="radio" id="no-pets" value="false" name="pets"/>
+								<p class="select-text">No/They don't care</p>
 							</div>
 							<div class="select-option">
-								<input class="select-radio" type="radio" id="no-pets" value="false" name="pets"/>
-								<p class="select-text">False</p>
+								<input class="select-radio" type="radio" id="yes-pets" value="true" name="pets"/>
+								<p class="select-text">Yes</p>
 							</div>
 						</div>
 						<ul class="select-label-list">
@@ -132,10 +129,10 @@
 								<label class="select-label" for="select-pets" aria-hidden="aria-hidden">Select...</label>
 							</li>
 							<li>
-								<label class="select-label" for="yes-pets" aria-hidden="aria-hidden">True</label>
+								<label class="select-label" for="no-pets" aria-hidden="aria-hidden">No/They don't care</label>
 							</li>
 							<li>
-								<label class="select-label" for="no-pets" aria-hidden="aria-hidden">False</label>
+								<label class="select-label" for="yes-pets" aria-hidden="aria-hidden">Yes</label>
 							</li>
 						</ul>
 					</div>
@@ -143,19 +140,27 @@
 			</div>
 		</section>
 
-		<section id="results">
+		<section class="hidden" id="results">
 			<div class="content">
 				<div class="title-area">
 					<h3 class="title" title="Look at the best plants based on your choices">Our picks for you</h3>
 				</div>
-				<ul id="results-area"></ul>
-				<a href="#" class="btn" title="Click here to back to top"><i class="arrow"></i> back to the top</a>
+				<div class="results-slider">
+					<ul class="slider slider-wrapper" id="results-area"></ul>
+				</div>
+				
+				<button class="btn anchor" data-scroll-to="#hero" title="Click here to back to top"><i class="arrow"></i> back to the top</button>
+			</div>
+		</section>
+
+		<section id="no-results">
+			<div class="content">
+				<div class="title-area">
+					<h3 class="title" title="Use the filters above to find the plant that best fits your environment">No results yet…</h3>
+					<p class="description">Use the filters above to <br/>find the plant that best fits <br/>your environment :)</p>
+				</div>
 			</div>
 		</section>
 	</main>
-	<script>
-        let data = {sun: 'no', pets: 'false', water: 'regularly' };
-        app.functions.loadPlants(data);
-	</script>
 </body>
 </html>

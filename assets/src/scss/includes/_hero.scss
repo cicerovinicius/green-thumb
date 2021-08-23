@@ -19,18 +19,7 @@
         top: 0;
         bottom: 0;
     }
-    &:before{
-        background-image: url('#{$img_path}hero/desktop/left-leaves.png');
-        left: 0;
-        right: auto;
-        width: 70%;
-    }
-    &:after{
-        background-image: url('#{$img_path}hero/desktop/right-leaves.png');
-        right: 0;
-        left: auto;
-        width: 20%;
-    }
+    
     
     .title-area{
         padding-top: 24px;
@@ -54,6 +43,8 @@
             margin-bottom: 30px;
         }
         .arrow-btn{
+            background: none !important;
+            border: none !important;
             display: flex;
             @include min-max-size(45px);
             -moz-animation: bounceArrow 2s infinite;
@@ -86,9 +77,97 @@
             }
         }
     }
-    .img-area{
-        margin-left: auto;
-        margin-right: 8%;
-        width: 33%;
+    
+    @media(max-width: 767px){
+        &:before{
+            background-image: url('#{$img_path}hero/mobile/mobile-leaves.png');
+            // background-size: 100% auto;
+            background-size: cover;
+            background-position: center bottom;
+            height: 70%;
+            left: 0;
+            right: 0;
+            width: 100%;
+            z-index: 2;
+        }
+        &:after{
+            display: none;
+        }
+        
+        .title-area{
+            padding: 0 30px;
+            width: 100%;
+            
+            .logo-link{
+                margin-bottom: 30px;
+            }
+            .title{
+                font-size: 2.5em;
+            }
+        }
+        .img-area{
+            background: url('#{$img_path}hero/mobile/mobile-plantperson.png') center no-repeat;
+            background-size: auto 100%;
+            height: 235px;
+            width: 100%;
+            z-index: 1;
+        }
+    }
+    
+    // @media(min-width: 768px)
+    @media(min-width: 600px){
+        &:before{
+            background-image: url('#{$img_path}hero/desktop/left-leaves.png');
+            left: 0;
+            right: auto;
+            width: 70%;
+        }
+        &:after{
+            background-image: url('#{$img_path}hero/desktop/right-leaves.png');
+            right: 0;
+            left: auto;
+            width: 20%;
+        }
+        
+        .img-area{
+            background: url('#{$img_path}hero/desktop/plantperson.png') center no-repeat;
+            background-size: auto 100%;
+            margin-left: auto;
+            margin-right: 8%;
+            width: 33%;
+        }
+    }
+    
+    @media(min-width: 600px) and (max-width: 767px){
+        padding-bottom: 3em;
+        
+        &:before{
+            background-size: auto 100%;
+            background-position: top right;
+            height: 100%;
+            width: 70%;
+        }
+        
+        .title-area{
+            width: 50%;
+        }
+        .img-area{
+            margin-left: 0;
+            margin-right: 0;
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            right: -5%;
+            width: 40%;
+            height: 100%;
+        }
+    }
+
+    @media(min-width: 768px){
+        &:before{
+            background-size: cover;
+            background-position: center right;
+            width: 60%;
+        }
     }
 }

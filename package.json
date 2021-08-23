@@ -12,6 +12,7 @@
 		"jquery": "^3.4.1",
 		"parcel": "1.12.4",
 		"popper.js": "^1.16.1",
+		"slick-carousel": "^1.8.1",
 		"smoothscroll-for-websites": "^1.4.9"
 	},
 	"devDependencies": {

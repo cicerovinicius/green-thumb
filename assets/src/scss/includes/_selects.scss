@@ -169,6 +169,22 @@
 		}
 	}
 
+	@media(max-width: 767px){
+		padding: 1.5em 0;
+
+		.col-select{
+    		margin: 0 auto 2em;
+			padding: 0 30px;
+			// width: 80%;
+			width: 100%;
+		}
+	}
+	@media(min-width: 768px) and (max-width: 1199px){
+        .col-select{
+			width: 30%;
+		}
+    }
+
 	@include keyframes('showOptions'){
 		from{ transform: scaleY(1); }
 		to{ transform: scaleY(0); }

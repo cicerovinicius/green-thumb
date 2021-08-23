@@ -12,7 +12,6 @@
 	<script src="assets/dist/js/scripts.min.js"></script>
 </head>
 <body>
-	<!-- <img src="assets/dist/images/icons/logo-white.svg" alt="Greenthumb" /> -->
 	<main id="main-wrapper">
 		<section id="hero">
 			<div class="content">
@@ -21,11 +20,9 @@
 						<img src="assets/dist/images/green-thumb-logo.png" alt="white logo green thumb" title="green thumb" />
 					</a>
 					<h1 class="title" title="Greenthumb can help you to find the perfect plant for you">Find your <br/>next green <br/>friend</h1>
-					<a href="#" class="arrow-btn" title="Click to see ours products"></a>
+					<button class="arrow-btn anchor" data-scroll-to="#selects" title="Click to see ours products"></button>
 				</div>
-				<div class="img-area">
-					<img src="assets/dist/images/hero/desktop/plantperson.png" alt="drawing of a person holding a plant and other plants in the background" title="green thumb" />
-				</div>
+				<div class="img-area"></div>
 			</div>
 		</section>
 		
@@ -37,7 +34,7 @@
 					<div class="select-box-area">
 						<div class="select-box" id="select-box-sunlight" tabindex="1">
 							<div class="select-option">
-								<input class="select-radio" type="radio" id="select-sun" value="no" name="sun" checked="checked"/>
+								<input class="select-radio" type="radio" id="select-sun" value="unselected" name="sun" checked="checked"/>
 								<p class="select-text">Select...</p>
 							</div>
 							<div class="select-option">
@@ -76,7 +73,7 @@
 					<div class="select-box-area">
 						<div class="select-box" tabindex="2">
 							<div class="select-option">
-								<input class="select-radio" type="radio" id="select-water" value="regularly" name="water" checked="checked"/>
+								<input class="select-radio" type="radio" id="select-water" value="unselected" name="water" checked="checked"/>
 								<p class="select-text">Select...</p>
 							</div>
 							<div class="select-option">
@@ -115,7 +112,7 @@
 					<div class="select-box-area">
 						<div class="select-box" tabindex="1">
 							<div class="select-option">
-								<input class="select-radio" type="radio" id="select-pets" value="false" name="pets" checked="checked"/>
+								<input class="select-radio" type="radio" id="select-pets" value="unselected" name="pets" checked="checked"/>
 								<p class="select-text">Select...</p>
 							</div>
 							<div class="select-option">
@@ -140,6 +137,19 @@
 						</ul>
 					</div>
 				</div>
+			</div>
+		</section>
+
+		<section class="hidden" id="results">
+			<div class="content">
+				<div class="title-area">
+					<h3 class="title" title="Look at the best plants based on your choices">Our picks for you</h3>
+				</div>
+				<div class="results-slider">
+					<ul class="slider slider-wrapper" id="results-area"></ul>
+				</div>
+				
+				<button class="btn anchor" data-scroll-to="#hero" title="Click here to back to top"><i class="arrow"></i> back to the top</button>
 			</div>
 		</section>
 
