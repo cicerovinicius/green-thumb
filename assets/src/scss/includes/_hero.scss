@@ -1,0 +1,94 @@
+#hero{
+    background: $green_light;
+    color: $white;
+    padding-top: 30px;
+    padding-bottom: 20px;
+    width: 100%;
+    
+    &, .title-area{
+        position: relative;
+    }
+    
+    &:before, &:after{
+        background-position: left center;
+        background-repeat: no-repeat;
+        background-size: auto 100%;
+        content: '';
+        display: block;
+        position: absolute;
+        top: 0;
+        bottom: 0;
+    }
+    &:before{
+        background-image: url('#{$img_path}hero/desktop/left-leaves.png');
+        left: 0;
+        right: auto;
+        width: 70%;
+    }
+    &:after{
+        background-image: url('#{$img_path}hero/desktop/right-leaves.png');
+        right: 0;
+        left: auto;
+        width: 20%;
+    }
+    
+    .title-area{
+        padding-top: 24px;
+        padding-bottom: 47px;
+        width: 50%;
+        z-index: 3;
+        
+        .logo-link{
+            display: inline-block;
+            margin-right: auto;
+            margin-bottom: 42px;
+        }
+        
+        .title{
+            font-style: normal;
+            font-weight: bold;
+            // font-size: 70px;
+            font-size: 4.375em;
+            // line-height: 85px;
+            line-height: 1.22em;
+            margin-bottom: 30px;
+        }
+        .arrow-btn{
+            display: flex;
+            @include min-max-size(45px);
+            -moz-animation: bounceArrow 2s infinite;
+            -webkit-animation: bounceArrow 2s infinite;
+            animation: bounceArrow 2s infinite;
+            
+            &, &:before{
+                transition: all 0.2s linear;
+            }
+            
+            &:before{
+                background: url('#{$img_path}icons/arrow-down.svg') center no-repeat;
+                background-size: auto 100%;
+                content: '';
+                display: block;
+                height: 100%;
+                width: 100%;
+            }
+            
+            @include keyframes('bounceArrow'){
+                0%, 20%, 50%, 80%, 100% {
+                    transform: translateY(0);
+                }
+                40% {
+                    transform: translateY(15px);
+                }
+                60% {
+                    transform: translateY(5px);
+                }
+            }
+        }
+    }
+    .img-area{
+        margin-left: auto;
+        margin-right: 8%;
+        width: 33%;
+    }
+}

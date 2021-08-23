@@ -1,0 +1,176 @@
+#selects{
+	padding: 3em 0;
+    // padding-top: 47px;
+
+	.content{
+		justify-content: space-between;
+	}
+	.col-select{
+		// width: 30%;
+		width: 25%;
+
+		.icon{
+			background: {
+				position: center;
+				repeat: no-repeat;
+				size: 100% auto;
+			}
+			display: flex;
+			margin-bottom: 5px;
+		}
+		.select-description{
+			color: #848484;
+			font-style: normal;
+			font-weight: 300;
+			// font-size: 14px;
+			font-size: 0.87em;
+			// line-height: 22px;
+			line-height: 1.55em;
+			
+			b{
+				font-weight: 600;
+			}
+		}
+
+		&[data-step="sunlight"]{
+			.icon{
+				background-image: url('#{$img_path}illustrations/sun.png');
+				@include min-max-size(75px);
+			}
+		}
+		&[data-step="water"]{
+			.icon{
+				background-image: url('#{$img_path}illustrations/wateringcan.png');
+				@include min-max-size(103px, 75px);
+			}
+		}
+		&[data-step="pets"]{
+			.icon{
+				background-image: url('#{$img_path}illustrations/dog.png');
+				@include min-max-size(80px, 75px);
+			}
+		}
+	}
+	.select-box-area{
+		color: $gray;
+		display: block;
+		font-style: normal;
+		font-weight: 300;
+		// font-size: 14px;
+		font-size: 0.85em;
+		margin: 0 auto;
+		// width: 220px;
+		width: 100%;
+		z-index: 2;
+		
+		&, .select-box{
+			position: relative;
+		}
+		
+		.select-box{
+			border: 1px solid $gray;
+			box-sizing: border-box;
+			border-radius: 50px;
+			cursor: pointer;
+			// line-height: 27px;
+			line-height: 1.72em;
+			overflow: hidden;
+			outline: none;
+			
+			&:before{
+				// background: $white;
+				border-right: 2px solid $gray;
+				border-bottom: 2px solid $gray;
+				content: '';
+				display: block;
+				@include min-max-size(14px);
+				position: absolute;
+				// top: 19px;
+				top: 39%;
+				right: 19px;
+				transform: translateY(-50%) rotate(45deg);
+				transition: 0.2s ease;
+			}
+			
+			// &.open, &:focus {
+			&.open{
+				border-radius: 19px;
+				border-bottom-left-radius: 0;
+				border-bottom-right-radius: 0;
+				border-bottom-color: $white;
+
+				& + .select-label-list {
+					opacity: 1;
+					animation-name: none;
+					max-height: 800px;
+					
+					.select-label {
+						cursor: pointer;
+					}
+				}
+				
+				&:before{
+					transform: translateY(-12%) rotate(225deg);
+				}
+			}
+		}
+		
+		.select-option {
+			display: flex;
+		}
+		
+		.select-radio {
+			display: none;
+			
+			&:checked + .select-text {
+				display: block;
+			}
+		}
+		
+		.select-text {
+			background-color: $white;
+			display: none;
+			margin: 0;
+			padding: 8px 15px;
+			width: 100%;
+		}
+		
+		.select-label-list {
+			border: 1px solid $gray;
+			border-radius: 19px;
+			border-top: none;
+			border-top-left-radius: 0;
+			border-top-right-radius: 0;
+			list-style: none;
+			margin: 0;
+			opacity: 0;
+			overflow: hidden;
+			max-height: 0px;
+			padding: 0;
+			position: absolute;
+			width: calc(100% - 2px);
+			// animation-name: showOptions;
+			// animation-duration: 0.5s;
+			// animation-delay: 0.5s;
+			// animation-fill-mode: forwards;
+			// animation-timing-function: step-start;
+		}
+		
+		.select-label {
+			display: block;
+			padding: 15px;
+			background-color: $white;
+			
+			&:hover,
+			&:focus {
+				color: $white;
+				background-color: $green_light;
+			}
+		}
+	}
+
+	@include keyframes('showOptions'){
+		from{ transform: scaleY(1); }
+		to{ transform: scaleY(0); }
+	}
+}

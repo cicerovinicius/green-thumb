@@ -1,0 +1,30 @@
+@mixin min-max-size($width: 0, $height: 0){
+	width: $width;
+	min-width: $width;
+	max-width: $width;
+
+	@if($height == 0){
+		height: $width;
+		min-height: $width;
+		max-height: $width;
+	}@else{
+		height: $height;
+		min-height: $height;
+		max-height: $height;
+	}
+}
+
+@mixin keyframes($animationName){
+	@-webkit-keyframes #{$animationName}{
+		@content;
+	}
+	@-moz-keyframes #{$animationName}{
+		@content;
+	}
+	@-o-keyframes #{$animationName}{
+		@content;
+	}
+	@keyframes #{$animationName}{
+		@content;
+	}
+}
