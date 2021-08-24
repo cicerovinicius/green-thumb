@@ -177,6 +177,22 @@
 			padding: 0 30px;
 			// width: 80%;
 			width: 100%;
+
+			&:first-of-type{
+				.select-box-area{
+					z-index: 5;
+				}
+			}
+			&:nth-of-type(2){
+				.select-box-area{
+					z-index: 4;
+				}
+			}
+			&:last-of-type{
+				.select-box-area{
+					z-index: 3;
+				}
+			}
 		}
 	}
 	@media(min-width: 768px) and (max-width: 1199px){
