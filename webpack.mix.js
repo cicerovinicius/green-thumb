@@ -1,7 +1,4 @@
 const mix = require('laravel-mix');
-// require('laravel-mix-imagemin');
-// require('laravel-mix-clean-css');
-
 const ImageminPlugin = require('imagemin-webpack-plugin').default;
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 const imageminMozjpeg = require('imagemin-mozjpeg');
